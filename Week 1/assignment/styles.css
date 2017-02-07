@@ -5,10 +5,16 @@
 /* Global */
 * {
   font-family: sans-serif;
+  border: none;
 }
 
 body {
-  background-color: #ECEFF1;
+  background-color: grey;
+  margin: 2%;
+}
+
+section {
+  background-color: white;
 }
 
 body.dimmed::before {
@@ -21,7 +27,7 @@ body.dimmed::before {
     background: rgba(0,0,0,.8);
 }
 
-/* Fancy Ampersand */
+/* Fancy Character */
 @font-face {
     font-family: Mark;
     src: local('Baskerville-Italic');
@@ -36,14 +42,42 @@ p {
 
 li {
   list-style-type: none;
-  counter-increment: step-counter;
   background-color: #2196F3;
   color: white;
   padding: 1%;
+  margin: 1%;
+  border-radius: 25px;
 }
 
 li:before {
   background-color: red;
-  content: counter(step-counter);
   padding: 0.5%;
+}
+
+p[data-status=READ] {
+  color: white;
+  background-color: #8BC34A;
+}
+
+p[data-status=DELIVERED] {
+  color: white;
+  background-color: #FF9800;
+}
+
+footer > p:first-child {
+  font-size: 0.8em;
+}
+
+form {
+  background-color: #EEEEEE;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+textarea {
+  border: none;
+  background-color: #F5F5F5;
+  min-height: 15vh;
+  border-bottom: 1px solid purple;
 }
