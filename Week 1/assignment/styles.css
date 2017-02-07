@@ -1,0 +1,49 @@
+/* Table of Contents
+- Global
+- 1. Chat*/
+
+/* Global */
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #ECEFF1;
+}
+
+body.dimmed::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,.8);
+}
+
+/* Fancy Ampersand */
+@font-face {
+    font-family: Mark;
+    src: local('Baskerville-Italic');
+    unicode-range: U+21;
+}
+
+p {
+    font-family: Mark, Helvetica, sans-serif;
+}
+
+/* 1. Chat */
+
+li {
+  list-style-type: none;
+  counter-increment: step-counter;
+  background-color: #2196F3;
+  color: white;
+  padding: 1%;
+}
+
+li:before {
+  background-color: red;
+  content: counter(step-counter);
+  padding: 0.5%;
+}
