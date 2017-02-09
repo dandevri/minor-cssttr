@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Living Styleguide</title>
 
@@ -15,11 +15,11 @@
 <h1>Living Styleguide</h1>
 
 <!-- place components or patterns here -->
-<section>
-  <h2 id="chat">1. Chat components</h2>
+<section id="chat">
+  <h2>1. Chat components</h2>
 
 <!-- 1. Chat !-->
-  <ol>
+  <!-- <ol>
       <li>
 
           <p>
@@ -64,10 +64,10 @@
       <button type="submit">Send</button>
 
   </form>
-</section>
+</section> -->
 
-<section>
-  <h2 id="login">2. Login screen</h2>
+<section id="login">
+  <h2>2. Login screen</h2>
   <form action="/" method="post">
 
       <label for="field-email">Email</label>
@@ -76,13 +76,16 @@
       <label for="field-password">Password</label>
       <input type="password" id="field-password" name="field-password" required>
 
-      <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
-      <label for="field-stay-logged-in">Stay logged in</label>
+      <div id="forgot">
+        <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+        <label for="field-stay-logged-in">Stay logged in</label>
+      </div>
 
       <a href="/">Forgot password</a>
 
       <button type="submit">Login</button>
   </form>
 </section>
+
 </body>
 </html>

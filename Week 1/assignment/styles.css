@@ -1,83 +1,108 @@
-/* Table of Contents
-- Global
-- 1. Chat*/
-
-/* Global */
-* {
-  font-family: sans-serif;
-  border: none;
-}
-
 body {
-  background-color: grey;
-  margin: 2%;
+  background-color: #ECEFF1;
+  font-family: sans-serif;
 }
 
 section {
   background-color: white;
-}
-
-body.dimmed::before {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background: rgba(0,0,0,.8);
-}
-
-/* Fancy Character */
-@font-face {
-    font-family: Mark;
-    src: local('Baskerville-Italic');
-    unicode-range: U+21;
-}
-
-p {
-    font-family: Mark, Helvetica, sans-serif;
-}
-
-/* 1. Chat */
-
-li {
-  list-style-type: none;
-  background-color: #2196F3;
-  color: white;
-  padding: 1%;
-  margin: 1%;
-  border-radius: 25px;
-}
-
-li:before {
-  background-color: red;
-  padding: 0.5%;
-}
-
-p[data-status=READ] {
-  color: white;
-  background-color: #8BC34A;
-}
-
-p[data-status=DELIVERED] {
-  color: white;
-  background-color: #FF9800;
-}
-
-footer > p:first-child {
-  font-size: 0.8em;
-}
-
-form {
-  background-color: #EEEEEE;
-  display: flex;
-  flex-direction: column;
   padding: 2%;
+  margin: 2%;
+}
+
+button[type="submit"] {
+  background-color: #536DFE;
+  border: none;
+  padding: 2%;
+  border-radius: 1em;
+  color: white;
+  font-weight: 700;
 }
 
 textarea {
+  min-height: 5em;
+}
+
+/* 1. Chat components */
+/*#chat p {
+  font-weight: 700;
+}
+
+#chat ol {
+  color: black;
+  list-style-type: none;
+  padding: 0;
+}
+
+#chat li {
+  background-color: #CFD8DC;
+  padding: 2%;
+  margin: 2%;
+  border-radius: 0.8em;
+}
+
+#chat form {
+  background-color: #CFD8DC;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat form > * {
+  margin: 1%;
+}
+
+#chat footer p {
+  font-weight: 500;
+  font-size: 0.8em;
+}*/
+
+/* Check marks */
+/*#chat footer [data-status="READ"]:before {
+  content: "✓✓ ";
+  color: #37474F;
+}
+
+#chat footer [data-status="DELIVERED"]:before {
+  content: "✓ ";
+  color: #37474F;
+}
+
+#chat label {
+  background-color: #78909C;
+  margin: 0;
+  padding: 2%;
+  color: white;
+}*/
+
+/* 2. Login form */
+#login form {
+  display: flex;
+  flex-direction: column;
+  background-color: #2196F3;
+  max-width: 30em;
+  margin: auto;
+  padding: 2em;
+  border-radius: 1vw;
+  color: white;
+}
+
+#login input {
+  min-height: 4em;
+  margin: 1em 0 1em 0;
+  background-color: #42A5F5;
   border: none;
-  background-color: #F5F5F5;
-  min-height: 15vh;
-  border-bottom: 1px solid purple;
+}
+
+#login #forgot {
+  display: flex;
+  margin: 2%;
+}
+
+#login #forgot input {
+  min-height: 0;
+  margin: 0;
+}
+
+#login input[type="checkbox"] {
+  appearance: none;
+  background-color: hotpink;
 }
