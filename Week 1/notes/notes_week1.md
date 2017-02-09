@@ -1,4 +1,4 @@
-# CSS to the Rescue
+# College 1
 
 CSS secrets book aanschaffen.
 
@@ -73,3 +73,25 @@ Je hoeft geen namen te bedenken. Welke attributen zijn er beschikbaar voor een e
 Hoe moet ik dit nou vormgeven? Oefenen en kijken naar andere huisstijlen.
 Geen copy-paste. Probeer zelf te maken. Zijn twee losse vakken dus plan,
 kan je niet combineren. Styleguide bijhouden moet / mag.
+
+# College 2
+
+Maak productiecode, ben ik iets aan het leren. Anders ken je alleen nog maar de class selector. Beperking opleggen. Flexbox gaat alleen over dingen naast elkaar zetten. CSS grid is bedoelt voor ordenen, ook onder elkaar. Flexbox voor compenenten (navigation) maar CSS grid meer voor lay-out.
+
+## Mobile-first
+* Let op device features.
+* Generic Styles
+* Layout optimaliseren per viewport.
+* Begin klein en ga dan schalen.
+
+Desktop first content is gemaakt om de schermruimte te vullen. Krimpen is minder makkelijk. Vergrote (mobile-first) is makkelijker. Desktop first
+vergeet je al snel ook de 4k schermen, omdat je vanaf een fixed point terug gaat werken. informatie die je hebt op ee mooiere layout te plaatsen. Plak niet een a4'tje op je scherm.
+
+## Content als uitgangspunt
+* Werk op elk device
+* Vormgeving is afhankelijk van content
+
+## Generic style
+* Losse componenten van style te voorzien. KLeine kleuren. Maar HTML moet al goed zijn.
+* Dan pas met de layout aan de slag. Eerst styles dan layout.
+* Meeste devices zitten inbetween (tussen dekstop en mobile)
