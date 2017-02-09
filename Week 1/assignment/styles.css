@@ -23,7 +23,7 @@ textarea {
 }
 
 /* 1. Chat components */
-/*#chat p {
+#chat p {
   font-weight: 700;
 }
 
@@ -53,10 +53,10 @@ textarea {
 #chat footer p {
   font-weight: 500;
   font-size: 0.8em;
-}*/
+}
 
 /* Check marks */
-/*#chat footer [data-status="READ"]:before {
+#chat footer [data-status="READ"]:before {
   content: "✓✓ ";
   color: #37474F;
 }
@@ -71,38 +71,68 @@ textarea {
   margin: 0;
   padding: 2%;
   color: white;
-}*/
+}
 
 /* 2. Login form */
-#login form {
+body {
+  background-color: #CFD8DC;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #1976D2;
+}
+
+#login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background-color: #2196F3;
   display: flex;
   flex-direction: column;
-  background-color: #2196F3;
-  max-width: 30em;
-  margin: auto;
-  padding: 2em;
-  border-radius: 1vw;
+  padding: 5vh;
+  min-width: 50vw;
   color: white;
 }
 
-#login input {
-  min-height: 4em;
-  margin: 1em 0 1em 0;
-  background-color: #42A5F5;
-  border: none;
+label, input {
+  line-height: 3;
 }
 
-#login #forgot {
-  display: flex;
-  margin: 2%;
+input:focus {
+  background-color: #E3F2FD;
+  border: .25em solid #FFC107;
 }
 
-#login #forgot input {
-  min-height: 0;
-  margin: 0;
-}
-
-#login input[type="checkbox"] {
-  appearance: none;
+button[type="submit"] {
   background-color: hotpink;
+  border: none;
+  padding: 1em 2em 1em 2em;
+  border-radius: 1em;
+  min-width: 20vh;
+  align-self: center;
+  background-color: #FFC107;
+  color: white;
+  font-weight: 500;
+  font-size: 1em;
+  margin-top: 2vh;
+}
+
+/* Media Item */
+
+article {
+  background-color: white;
+  padding: 1.5em;
+  width: min-content;
+  color: #1976D2;
+  border-radius: 1em;
+}
+
+article img {
+  width: 30vw;
 }
