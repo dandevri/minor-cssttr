@@ -197,7 +197,7 @@ a {
 }
 
 /* Layover with image */
-div.lightbox {
+/*div.lightbox {
   display: none;
   position: fixed;
   left: 0;
@@ -208,4 +208,4 @@ div.lightbox {
 
 div.lightbox:target {
   display: block;
-}
+}*/
