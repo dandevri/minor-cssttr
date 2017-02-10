@@ -1,28 +1,44 @@
+@font-face { /* CSS secrets 5.25 */
+  font-family: Checkmark;
+  src: local('Baskerville-BoldItalic');
+  unicode-range: U+76;
+}
+
 body {
   background-color: #ECEFF1;
   font-family: sans-serif;
-}
-
-section {
-  background-color: white;
-  padding: 2%;
-  margin: 2%;
+  margin: 5%;
 }
 
 button[type="submit"] {
-  background-color: #536DFE;
+  background-color: #FFC107;
   border: none;
-  padding: 2%;
+  padding: .20em;
   border-radius: 1em;
   color: white;
   font-weight: 700;
+  min-width: 10vw;
+  align-self: flex-end;
+  font-size: 1em;
 }
 
 textarea {
   min-height: 5em;
+  background-color: #1E88E5;
+  border: none;
+  color: white;
+  font-size: 1em;
+  padding: 1em;
 }
 
-/* 1. Chat components */
+a {
+  text-decoration: none;
+  color: #1976D2;
+}
+
+
+/* 1. Components
+-------------------------------*/
 #chat p {
   font-weight: 700;
 }
@@ -34,14 +50,15 @@ textarea {
 }
 
 #chat li {
-  background-color: #CFD8DC;
+  background-color: #2196F3;
   padding: 2%;
   margin: 2%;
   border-radius: 0.8em;
+  color: #ffffff;
 }
 
 #chat form {
-  background-color: #CFD8DC;
+  background-color: #64B5F6;
   display: flex;
   flex-direction: column;
 }
@@ -56,42 +73,36 @@ textarea {
 }
 
 /* Check marks */
+
+#chat footer [data-status]:before {
+  color: #ffffff;
+  font-family: Checkmark;
+  font-size: 2em;
+}
 #chat footer [data-status="READ"]:before {
-  content: "✓✓ ";
-  color: #37474F;
+  content: "vv ";
 }
 
 #chat footer [data-status="DELIVERED"]:before {
-  content: "✓ ";
-  color: #37474F;
+  content: "v ";
 }
 
 #chat label {
-  background-color: #78909C;
+  background-color: #2196F3;
   margin: 0;
   padding: 2%;
   color: white;
 }
 
-/* 2. Login form */
-body {
-  background-color: #CFD8DC;
-  font-family: sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: #1976D2;
-}
-
+/* 2. Login Form
+-------------------------------*/
 #login {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: center; /* 7.40 Vertical centering */
 }
 
-form {
+#login form {
   background-color: #2196F3;
   display: flex;
   flex-direction: column;
@@ -100,39 +111,101 @@ form {
   color: white;
 }
 
-label, input {
+#login label, input {
   line-height: 3;
 }
 
-input:focus {
+#login input:focus {
   background-color: #E3F2FD;
   border: .25em solid #FFC107;
 }
 
-button[type="submit"] {
-  background-color: hotpink;
-  border: none;
+#login button[type="submit"] {
   padding: 1em 2em 1em 2em;
   border-radius: 1em;
   min-width: 20vh;
   align-self: center;
-  background-color: #FFC107;
-  color: white;
-  font-weight: 500;
   font-size: 1em;
   margin-top: 2vh;
 }
 
-/* Media Item */
+/* 3. Media Item
+-------------------------------*/
 
-article {
-  background-color: white;
+#media-item {
+  display: flex;
+  justify-content: center;
+}
+
+#media-item article {
+  background-color: #2196F3;
   padding: 1.5em;
-  width: min-content;
-  color: #1976D2;
+  width: min-content; /* CSS secrets 7.36 */
+  color: #ffffff;
   border-radius: 1em;
 }
 
-article img {
+#media-item h1 a {
+  color: #FFC107;
+}
+
+#media-item article img {
   width: 30vw;
+}
+
+/* 4. Navigation.
+-------------------------------*/
+#navigation nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#navigation nav h1 {
+  flex-basis: 100vw;
+  background-color: #FFC107;
+  padding: 1.5em;
+  color: #ffffff;
+  margin: 0;
+}
+
+#navigation nav ul {
+  display: flex;
+  list-style: none;
+  background-color: #2196F3;
+  flex-basis: 100vw;
+  margin: 0;
+  padding: 2%;
+}
+
+#navigation nav ul li ul {
+  display: none;
+}
+
+#navigation nav ul li:hover ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #1E88E5;
+  padding:15px;
+  margin:1em 0 3em;
+}
+
+
+#navigation nav ul li a {
+  padding: 1.5em;
+  color: #ffffff;
+}
+
+/* Layover with image */
+div.lightbox {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div.lightbox:target {
+  display: block;
 }
