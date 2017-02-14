@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+
+body {
+  background-color: #dee2e6;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+section {
+  background-color: white;
+  padding: 2em;
+  margin: 5%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+a {
+  text-decoration: none;
+}
+/* Tags
+--------------------*/
+
+li {
+  list-style-type: none;
+  color: white;
+  background-color: #72c3fc;
+  padding: 1em 3em;
+  margin-bottom: 5vh;
+  border-radius: 0em 2em 2em 2em;
+  max-width: 15vw;
+}
+
+li p {
+  font-weight: 700;
+}
+
+footer {
+  font-size: 0.8em;
+  line-height: 0.8;
+}
+
+label {
+  color: #748ffc;
+  line-height: 3em;
+}
+
+input {
+  line-height: 4vh;
+  border: none;
+  border-bottom: 2px solid #748ffc;
+  font-size: 1em;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid hotpink;
+}
+
+textarea {
+  border-radius: 1em;
+  border: none;
+  background-color: inherit;
+  border: 2px solid #748ffc;
+  font-size: 0.7em;
+}
+
+textarea:focus {
+  outline: none;
+  border-bottom: 2px solid hotpink;
+
+}
+/* Attributes
+--------------------*/
+
+[data-status="READ"]:before {
+  content: "vv ";
+  font-weight: 700;
+  background-color: #009688;
+  border-radius: 100%;
+  padding: 0.2em;
+  margin: 1%;
+}
+
+[data-status="DELIVERED"]:before {
+  content: "v";
+  font-weight: 700;
+  background-color: #009688;
+  border-radius: 100%;
+  padding: 0.2em;
+  margin: 1%;
+}
+
+[type="submit"] {
+  background-color: #4263eb;
+  border: none;
+  padding: 0.8em;
+  border-radius: 1em;
+  color: white;
+  min-width: 10vw;
+  font-weight: 900;
+  font-size: 0.8em;
+}
+
+/* 1. Chat
+--------------------*/
+
+footer p {
+  font-weight: 300;
+}
+
+.chat form {
+  display: flex;
+  background-color: #e9ecef;
+  padding: 1em;
+  height: 5vh;
+  color: white;
+}
+
+.chat form > label {
+  flex: 1;
+  align-self: center;
+  margin: 1%;
+}
+
+form > textarea {
+  flex: 4;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat li:nth-of-type(2) {
+  align-self: flex-end;
+  border-radius: 2em 0em 2em 2em;
+}
+
+/* 2. Login
+--------------------*/
+.login {
+  display: flex;
+  justify-content: center;
+}
+.login form {
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  min-width: 30vw;
+  padding: 2em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.login button {
+  margin: 2em;
+}
+
+.login .password {
+  margin: 2%;
+}
