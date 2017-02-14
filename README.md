@@ -15,4 +15,4 @@ Notes during lectures and from the book can be found here:
 
 **Week 2**
 
-[Code](week-2/assignment)
+[Code](week-2/)
