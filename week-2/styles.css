@@ -4,6 +4,7 @@ body {
   background-color: #dee2e6;
   color: black;
   font-family: 'Roboto', sans-serif;
+  margin: 5%;
 }
 
 ol {
@@ -13,12 +14,25 @@ ol {
 section {
   background-color: white;
   padding: 2em;
-  margin: 5%;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 a {
   text-decoration: none;
 }
+
+h2 {
+  text-align: left;
+  border-bottom: 1px solid hotpink;
+  padding: 1em;
+  color: blue;
+}
+
+article {
+  background-color: #4dadf7;
+  padding: 2em;
+  width: min-content;
+}
+
 /* Tags
 --------------------*/
 
@@ -159,4 +173,10 @@ ol {
 
 .login .password {
   margin: 2%;
+}
+
+/* Article
+--------------------*/
+article img {
+  width: 50vw;
 }
