@@ -6,10 +6,12 @@
 :root {
   --main-bg-color: #dee2e6;
   --main-fr-color: #fff;
+  --header-color: #2979FF;
 
   --main-font: 'Roboto', sans-serif;
   --main-font-color: #fff;
   --main-link-color: purple;
+  --main-heading-color: #1565C0;
   --main-p-color: black;
 
   --nav-dark: #3949AB;
@@ -18,8 +20,8 @@
 
   --section-bg-color: #fff;
 
-  --chat-bg-color: blue;
-  --chat-bg2-color: #DDF7C8;
+  --chat-bg-color: #2196F3;
+  --chat-bg2-color: #009688;
 
   --button-color: #4263eb;
 
@@ -37,11 +39,16 @@ ul,ol {
   padding: 0;
 }
 
+html, body {
+  margin: 0;
+  padding;
+}
+
+
 /* Global page styling
 -----------------------*/
 
 html {
-  margin: 2%;
   background-color: var(--main-bg-color);
   font-family: var(--main-font)
 }
@@ -50,10 +57,24 @@ section {
   background-color: var(--main-fr-color);
   box-shadow: var(--box-shadow-1);
   padding: 2em;
+  margin: 2em;
+}
+
+h2 {
+  padding: 1em 0em;
+  border-bottom: 0.05em solid var(--main-heading-color);
+  margin: 0em 2em;
+  color: var(--main-heading-color);
 }
 
 img {
   max-width: 100%;
+}
+
+header {
+  background-color: var(--header-color);
+  padding: 2em;
+  color: var(--main-fr-color);
 }
 
 /* Tags
@@ -81,6 +102,7 @@ article {
   box-shadow: var(--box-shadow-1);
   display: flex;
   flex-direction: column;
+  margin: 2%;
 }
 
 nav {
@@ -95,6 +117,27 @@ svg {
   width: 4vw;
 }
 
+textarea {
+  font-size: 1em;
+}
+
+footer {
+  font-size: 0.8em;
+  line-height: 0.4;
+}
+
+input {
+  line-height: 4vh;
+  border: none;
+  border-bottom: 0.2em solid #748ffc;
+  font-size: 1em;
+  color: none;
+}
+
+input:focus {
+  outline: 0.2em solid #748ffc;
+}
+
 /* Attributes
 ---------------*/
 [type="submit"] {
@@ -106,6 +149,20 @@ svg {
   min-width: 10vw;
   font-weight: 900;
   font-size: 0.8em;
+}
+
+[data-status] {
+  border-radius: 100%;
+  padding: 0.2em;
+  margin: 1%;
+}
+
+[data-status="READ"]:before {
+  content: "vv ";
+}
+
+[data-status="DELIVERED"]:before {
+  content: "v ";
 }
 
 /* 1. Chat
@@ -139,6 +196,14 @@ form > textarea {
   background-color: var(--chat-bg2-color);
 }
 
+li p {
+  font-weight: 700;
+}
+
+footer p {
+  font-weight: 300;
+}
+
 
 /* 2. Login
 -----------------*/
@@ -151,6 +216,10 @@ form > textarea {
   flex-direction: column;
   min-width: 30vw;
   box-shadow: var(--box-1-shadow);
+}
+
+.login form a {
+line-height: 4;
 }
 
 /* 3. Media item
@@ -169,7 +238,12 @@ article img {
   order: -1;
 }
 
-article > h1,p {
+article > h1 {
+  padding: 0em 1em;
+  order: 0;
+}
+
+article > p {
   padding: 0em 1em;
   order: 0;
 }
@@ -183,10 +257,14 @@ nav h1 {
 nav ul {
   display: flex;
   width: 100%;
+  background-color: #448AFF;
+  padding: 1em;
 }
 
-nav li {
+nav li a{
   margin-right: 3em;
+  color: white;
+  border-bottom: 0.10em solid white;
 }
 nav ul li ul {
   display: flex;
@@ -214,7 +292,7 @@ fieldset [type="radio"] {
   display: none;
 }
 
-.emoji {
+.emojis {
   display: flex;
   justify-content: space-between;
 }

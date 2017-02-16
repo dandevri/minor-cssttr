@@ -35,9 +35,11 @@ section {
   padding: 2em;
   box-shadow: var(--box-shadow-1);
 }
+
 a {
   text-decoration: none;
   color: var(--main-link-color);
+  line-height: 2;
 }
 
 p {
@@ -61,6 +63,7 @@ article {
   display: flex;
   flex-direction: column;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 2%;
 }
 
 img {
@@ -74,10 +77,7 @@ li p {
   font-weight: 700;
 }
 
-footer {
-  font-size: 0.8em;
-  line-height: 0.8;
-}
+3
 
 label {
   color: #748ffc;
