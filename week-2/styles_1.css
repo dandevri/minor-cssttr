@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+
+/* CSS variables for color
+-----------------------------*/
+
+:root {
+  --main-bg-color: #dee2e6;
+  --main-fr-color: #fff;
+
+  --main-font: 'Roboto', sans-serif;
+  --main-font-color: #fff;
+  --main-link-color: purple;
+  --main-p-color: black;
+
+  --box-shadow-1: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  --section-bg-color: #fff;
+
+}
+
+/* Global CSS
+---------------------------*/
+html {
+  background-color: var(--main-bg-color);
+  color: var(--main-fr-color);
+  font-family: var(--main-font);
+}
+
+ol {
+  padding: 0;
+  margin: 0;
+}
+section {
+  background-color: var(--section-bg-color);
+  padding: 2em;
+  box-shadow: var(--box-shadow-1);
+}
+a {
+  text-decoration: none;
+  color: var(--main-link-color);
+}
+
+p {
+  color: var(--main-p-color);
+}
+
+h1,ul {
+  margin: 0;
+}
+
+h2 {
+  text-align: left;
+  border-bottom: 1px solid hotpink;
+  padding: 1em;
+  color: blue;
+}
+
+article {
+  background-color: var(--main-fr-color);
+  max-width: 40vw;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+img {
+  width: 100%;
+}
+/* Tags
+--------------------*/
+
+2
+li p {
+  font-weight: 700;
+}
+
+footer {
+  font-size: 0.8em;
+  line-height: 0.8;
+}
+
+label {
+  color: #748ffc;
+  line-height: 3em;
+}
+
+input {
+  line-height: 4vh;
+  border: none;
+  border-bottom: 2px solid #748ffc;
+  font-size: 1em;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: 1px solid hotpink;
+}
+
+textarea {
+  border-radius: 1em;
+  border: none;
+  background-color: inherit;
+  border: 2px solid #748ffc;
+  font-size: 0.7em;
+}
+
+textarea:focus {
+  outline: none;
+  border-bottom: 2px solid hotpink;
+
+}
+/* Attributes
+--------------------*/
+
+[data-status="READ"]:before {
+  content: "vv ";
+  font-weight: 700;
+  background-color: #009688;
+  border-radius: 100%;
+  padding: 0.2em;
+  margin: 1%;
+}
+
+[data-status="DELIVERED"]:before {
+  content: "v";
+  font-weight: 700;
+  background-color: #009688;
+  border-radius: 100%;
+  padding: 0.2em;
+  margin: 1%;
+}
+
+[type="submit"] {
+  background-color: #4263eb;
+  border: none;
+  padding: 0.8em;
+  border-radius: 1em;
+  color: white;
+  min-width: 10vw;
+  font-weight: 900;
+  font-size: 0.8em;
+}
+
+/* 1. Chat
+--------------------*/
+
+footer p {
+  font-weight: 300;
+}
+
+.chat form {
+  display: flex;
+  background-color: #e9ecef;
+  padding: 1em;
+  height: 5vh;
+  color: white;
+}
+
+.chat form > label {
+  flex: 1;
+  align-self: center;
+  margin: 1%;
+}
+
+form > textarea {
+  flex: 4;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat li:nth-of-type(2) {
+  align-self: flex-end;
+  border-radius: 2em 0em 2em 2em;
+}
+
+/* 2. Login
+--------------------*/
+.login {
+  display: flex;
+  justify-content: center;
+}
+.login form {
+  display: flex;
+  background-color: #ffffff;
+  flex-direction: column;
+  min-width: 30vw;
+  padding: 2em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.login button {
+  margin: 2em;
+}
+
+.login .password {
+  margin: 2%;
+}
+
+/* 4. Media-item
+--------------------*/
+.media-item {
+  display: flex;
+  justify-content: center;
+}
+
+article p {
+  order: 2;
+  padding: 0em 2em;
+}
+
+article h1 {
+  order: 1;
+  padding: 0em 2em;
+}
+
+article img {
+  order: 0;
+}
+
+/* 5. Navigation
+-----------------*/
+
+ul {
+  display: flex;
+  background-color: blue;
+}
+
+h1 {
+  background-color: grey;
+}
+
+nav ul li ul {
+  display: flex;
+}

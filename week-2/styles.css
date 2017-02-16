@@ -1,182 +1,227 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
 
-body {
-  background-color: #dee2e6;
-  color: black;
-  font-family: 'Roboto', sans-serif;
-  margin: 5%;
+/* CSS variables for color
+-----------------------------*/
+
+:root {
+  --main-bg-color: #dee2e6;
+  --main-fr-color: #fff;
+
+  --main-font: 'Roboto', sans-serif;
+  --main-font-color: #fff;
+  --main-link-color: purple;
+  --main-p-color: black;
+
+  --nav-dark: #3949AB;
+
+  --box-shadow-1: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  --section-bg-color: #fff;
+
+  --chat-bg-color: blue;
+  --chat-bg2-color: #DDF7C8;
+
+  --button-color: #4263eb;
+
+  --nav-bg-color: #4263eb;
 }
 
-ol {
-  padding: 0;
-  margin: 0;
-}
-section {
-  background-color: white;
-  padding: 2em;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
+/* Some resets
+-----------------------*/
 a {
   text-decoration: none;
 }
 
-h2 {
-  text-align: left;
-  border-bottom: 1px solid hotpink;
-  padding: 1em;
-  color: blue;
+ul,ol {
+  list-style-type: none;
+  padding: 0;
 }
 
-article {
-  background-color: #4dadf7;
+/* Global page styling
+-----------------------*/
+
+html {
+  margin: 2%;
+  background-color: var(--main-bg-color);
+  font-family: var(--main-font)
+}
+
+section {
+  background-color: var(--main-fr-color);
+  box-shadow: var(--box-shadow-1);
   padding: 2em;
-  width: min-content;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* Tags
---------------------*/
+----------------*/
 
-li {
-  list-style-type: none;
-  color: white;
-  background-color: #72c3fc;
-  padding: 1em 3em;
-  margin-bottom: 5vh;
-  border-radius: 0em 2em 2em 2em;
-  max-width: 15vw;
-}
-
-li p {
-  font-weight: 700;
-}
-
-footer {
-  font-size: 0.8em;
-  line-height: 0.8;
+form {
+  display: flex;
+  background-color: var(--main-bg-color);
+  padding: 2em;
 }
 
 label {
-  color: #748ffc;
-  line-height: 3em;
+  line-height: 3;
+  cursor: pointer;
 }
 
 input {
-  line-height: 4vh;
-  border: none;
-  border-bottom: 2px solid #748ffc;
   font-size: 1em;
+  line-height: 2;
+  padding: 0.5em;
+  display: inline;
 }
 
-input:focus {
-  outline: none;
-  border-bottom: 1px solid hotpink;
+article {
+  box-shadow: var(--box-shadow-1);
+  display: flex;
+  flex-direction: column;
 }
 
-textarea {
-  border-radius: 1em;
-  border: none;
-  background-color: inherit;
-  border: 2px solid #748ffc;
-  font-size: 0.7em;
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--nav-bg-color);
+  color: var(--main-fr-color);
+  padding: 0em 1em;
 }
 
-textarea:focus {
-  outline: none;
-  border-bottom: 2px solid hotpink;
-
+svg {
+  width: 4vw;
 }
+
 /* Attributes
---------------------*/
-
-[data-status="READ"]:before {
-  content: "vv ";
-  font-weight: 700;
-  background-color: #009688;
-  border-radius: 100%;
-  padding: 0.2em;
-  margin: 1%;
-}
-
-[data-status="DELIVERED"]:before {
-  content: "v";
-  font-weight: 700;
-  background-color: #009688;
-  border-radius: 100%;
-  padding: 0.2em;
-  margin: 1%;
-}
-
+---------------*/
 [type="submit"] {
-  background-color: #4263eb;
+  background-color: var(--button-color);
   border: none;
   padding: 0.8em;
-  border-radius: 1em;
-  color: white;
+  border-radius: 0.5em;
+  color: var(--main-fr-color);
   min-width: 10vw;
   font-weight: 900;
   font-size: 0.8em;
 }
 
 /* 1. Chat
---------------------*/
-
-footer p {
-  font-weight: 300;
-}
-
-.chat form {
+----------------*/
+.chat ol {
   display: flex;
-  background-color: #e9ecef;
-  padding: 1em;
-  height: 5vh;
-  color: white;
+  flex-direction: column;
 }
 
 .chat form > label {
-  flex: 1;
   align-self: center;
-  margin: 1%;
 }
 
 form > textarea {
-  flex: 4;
+  flex: 1;
+  margin: 0em 3em;
 }
 
-ol {
-  display: flex;
-  flex-direction: column;
+.chat li {
+  color: var(--main-fr-color);
+  background-color: var(--chat-bg-color);
+  padding: 1em 3em;
+  margin-bottom: 5vh;
+  border-radius: 0em 2em 2em 2em;
+  max-width: 15vw;
 }
 
 .chat li:nth-of-type(2) {
   align-self: flex-end;
   border-radius: 2em 0em 2em 2em;
+  background-color: var(--chat-bg2-color);
 }
 
+
 /* 2. Login
---------------------*/
+-----------------*/
 .login {
   display: flex;
   justify-content: center;
 }
+
 .login form {
-  display: flex;
-  background-color: #ffffff;
   flex-direction: column;
   min-width: 30vw;
-  padding: 2em;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: var(--box-1-shadow);
 }
 
-.login button {
-  margin: 2em;
+/* 3. Media item
+--------------*/
+.media-item {
+  display: flex;
+  justify-content: center;
 }
 
-.login .password {
-  margin: 2%;
+.media-item article {
+  max-width: 30vw;
 }
 
-/* Article
---------------------*/
 article img {
+  width: 100%;
+  order: -1;
+}
+
+article > h1,p {
+  padding: 0em 1em;
+  order: 0;
+}
+
+/* 4. Navigation
+------------------*/
+nav h1 {
+  flex-basis: 100%;
+}
+
+nav ul {
+  display: flex;
+  width: 100%;
+}
+
+nav li {
+  margin-right: 3em;
+}
+nav ul li ul {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+/* 5. Picture with subtitle
+-----------------------*/
+.rating {
+  display: flex;
+  justify-content: center;
+}
+
+fieldset {
   width: 50vw;
+  text-align: center;
+  border-radius: 0.5em;
+  float: left;
+  border: none;
+  box-shadow: var(--box-shadow-1);
+}
+
+fieldset [type="radio"] {
+  display: none;
+}
+
+.emoji {
+  display: flex;
+  justify-content: space-between;
+}
+
+fieldset label {
+  line-height: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }
