@@ -1,8 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
 
-/* CSS variables for color
------------------------------*/
+@font-face { /* CSS secrets 5.25 */
+  font-family: Checkmark;
+  src: local('Baskerville-BoldItalic');
+  unicode-range: U+2713;
+}
 
+/* Loading spinner without sprite (8.43)
+-----------------------------*/
+.spinner {
+  background-color: var(--header-color);
+  cursor: progress; /* 6.29 cursor */
+  height: 4em;
+  width: 4em;
+  border-radius: 100%;
+  animation: spinner 2s infinite ease-in-out;
+}
+
+@keyframes spinner  {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.5); } }
+
+/* CSS variables
+-----------------------------*/
 :root {
   /* Colors */
   --main-bg-color: #dee2e6;
@@ -28,6 +49,9 @@
   --button-color: #4263eb;
   --nav-bg-color: #4263eb;
 
+  /* Width */
+  --full-width: 100vw;
+
   /* Padding */
   --padding-none: 0;
   --padding-small: 0.5em;
@@ -41,8 +65,8 @@
   --margin-big: 3em;
 }
 
-/* Some resets
------------------------*/
+/* Reset
+-----------------------------*/
 a {
   text-decoration: none;
 }
@@ -56,10 +80,12 @@ html, body {
   margin: var(--margin-none);
 }
 
+img {
+  max-width: var(--full-width);
+}
 
 /* Global page styling
------------------------*/
-
+-----------------------------*/
 html {
   background-color: var(--main-bg-color);
   font-family: var(--main-font);
@@ -74,13 +100,9 @@ section {
 
 h2 {
   padding: 1em 0em;
-  border-bottom: 0.05em solid var(--main-heading-color);
   margin: 0em 2em;
+  border-bottom: 0.05em solid var(--main-heading-color);
   color: var(--main-heading-color);
-}
-
-img {
-  max-width: 100%;
 }
 
 header {
@@ -90,7 +112,7 @@ header {
 }
 
 /* Tags
-----------------*/
+-----------------------------*/
 
 form {
   display: flex;
@@ -113,6 +135,17 @@ input {
 article {
   box-shadow: var(--box-shadow-1);
   padding: var(--padding-medium);
+  position: relative;
+}
+
+/* Media item fully clickable*/
+article a::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: '';
 }
 
 nav {
@@ -150,7 +183,7 @@ input:focus {
 }
 
 /* Attributes
----------------*/
+-----------------------------*/
 [type="submit"] {
   background-color: var(--button-color);
   border: none;
@@ -160,31 +193,23 @@ input:focus {
   min-width: 10vw;
   font-weight: 900;
   font-size: 0.8em;
+  cursor: pointer;
 }
 
-[data-status] {
-  border-radius: 100%;
-  padding: 0.2em;
-  margin: var(--margin-small);
-}
 
 [data-status="READ"]:before {
-  content: "vv ";
+  content: "✓✓ ";
 }
 
 [data-status="DELIVERED"]:before {
-  content: "v ";
+  content: "✓ ";
 }
 
 /* 1. Chat
-----------------*/
+-----------------------------*/
 .chat ol {
   display: flex;
   flex-direction: column;
-}
-
-.chat form > label {
-  align-self: center;
 }
 
 form > textarea {
@@ -215,9 +240,8 @@ footer p {
   font-weight: 300;
 }
 
-
 /* 2. Login
------------------*/
+-----------------------------*/
 .login {
   display: flex;
   justify-content: center;
@@ -234,33 +258,33 @@ line-height: 4;
 }
 
 /* 3. Media item
---------------*/
-.media-item {
+-----------------------------*/
+.item {
   display: flex;
   justify-content: center;
 }
 
-.media-item article {
+.item article {
   display: flex;
   max-width: 30vw;
   flex-wrap: wrap;
 }
 
-.media-item article img {
+.item article img {
   order: -1;
   object-fit: cover;
-  width: 100%;
+  width: var(--full-width);
 }
 
 /* 4. Navigation
-------------------*/
+-----------------------------*/
 nav h1 {
-  flex-basis: 100%;
+  flex-basis: 100vw;
 }
 
 nav ul {
   display: flex;
-  width: 100%;
+  width: var(--full-width);
   background-color: #448AFF;
   padding: var(--padding-medium);
 }
@@ -276,7 +300,18 @@ nav ul li ul {
   display: none;
 }
 
-/* 5. Picture with subtitle */
+@media (max-width: 40em) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin-bottom: var(--margin-small);
+  }
+}
+
+/* 5. Picture with subtitle
+-----------------------------*/
 figure {
   width: min-content;
   box-shadow: var(--box-shadow-1);
@@ -297,7 +332,7 @@ figure img {
 }
 
 /* 6. Rating
------------------------*/
+-----------------------------*/
 .rating {
   display: flex;
   justify-content: center;
@@ -329,18 +364,14 @@ fieldset label {
 }
 
 /* 7. Step indicator
-----------------------------*/
+-----------------------------*/
 progress {
-  width: 100%;
-}
-
-progress[value] {
-  height: 20px;
-  appearance: none;
+  width: var(--full-width);
+  height: 5vh;
 }
 
 .step ol {
   display: flex;
   justify-content: space-around;
-  width: 100vw;
+  width: var(--full-width);
 }
