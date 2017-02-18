@@ -12,9 +12,11 @@ Notes during lectures and from the book can be found here:
 **Week 1**
 
 [Code](week-1/)
+
 [Live](https://dandevri.github.io/minor-cssttr/week-1/)
 
 **Week 2**
 
 [Code](week-2/)
-[Code](https://dandevri.github.io/minor-cssttr/week-2/)
+
+[Live](https://dandevri.github.io/minor-cssttr/week-2/)
