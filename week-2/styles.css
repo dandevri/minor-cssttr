@@ -8,6 +8,14 @@
 
 /* Loading spinner without sprite (8.43)
 -----------------------------*/
+.preloader { /* 2.7 Random background, what's the use case for this? */
+  background: hsl(0, 100%, 100%);
+  background-image:
+  	linear-gradient(90deg, #fff 11px, transparent 0),
+  	linear-gradient(90deg, #DEE2E6 23px, transparent 0),
+  	linear-gradient(90deg, #fff 23px, transparent 0);
+  background-size: 20px 100%, 50px 100%, 30px 100%;
+}
 .spinner {
   background-color: var(--header-color);
   cursor: progress; /* 6.29 cursor */
@@ -69,6 +77,8 @@
 -----------------------------*/
 a {
   text-decoration: none;
+  display: block;
+  width: 100%; /* 6.30 Extending the clickable area of anchor links */
 }
 
 ul {
@@ -126,7 +136,7 @@ label {
 }
 
 input {
-  font-size: 1em;
+  font-size: 1em; /* Change input font-size */
   line-height: 2;
   padding: 0.5em;
   display: inline;
@@ -175,7 +185,6 @@ input {
   border: none;
   border-bottom: 0.2em solid #748ffc;
   font-size: 1em;
-  color: none;
 }
 
 input:focus {
@@ -196,6 +205,32 @@ input:focus {
   cursor: pointer;
 }
 
+/* 6.31 Custom Checkboxes */
+input[type="checkbox"] + label::before {
+    content: '\a0';
+    display: inline-block;
+    vertical-align: .2em;
+    width: .8em;
+    height: .8em;
+    margin-right: .2em;
+    border-radius: .2em;
+    background: silver;
+    text-indent: .15em;
+    line-height: .65;
+}
+
+input[type="checkbox"]:checked + label::before {
+    background: var(--button-color);
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"]:focus + label::before {
+    box-shadow: 0 0 .1em .1em var(--button-color  );
+}
 
 [data-status="READ"]:before {
   content: "✓✓ ";
@@ -207,6 +242,7 @@ input:focus {
 
 /* 1. Chat
 -----------------------------*/
+
 .chat ol {
   display: flex;
   flex-direction: column;
@@ -242,9 +278,10 @@ footer p {
 
 /* 2. Login
 -----------------------------*/
-.login {
+.login { /* 7.40 Vertical centering login form */
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .login form {
@@ -286,14 +323,13 @@ nav ul {
   display: flex;
   width: var(--full-width);
   background-color: #448AFF;
-  padding: var(--padding-medium);
 }
 
 nav li a{
-  margin-right: var(--margin-big);
-  color: white;
-  border-bottom: 0.10em solid white;
+  padding: var(--padding-medium);
+  color: var(--main-fr-color);
 }
+
 nav ul li ul {
   display: flex;
   flex-direction: column;
@@ -313,10 +349,9 @@ nav ul li ul {
 /* 5. Picture with subtitle
 -----------------------------*/
 figure {
-  width: min-content;
+  width: min-content; /* 7.36 Intrinsic sizing */
   box-shadow: var(--box-shadow-1);
   min-width: 30vw;
-  max-width: 40vw;
   padding: var(--padding-big);
   margin: var(--margin-none);
 }
@@ -347,9 +382,11 @@ fieldset {
   box-shadow: var(--box-shadow-1);
 }
 
-fieldset [type="radio"] {
-  display: none;
+input[type="radio"] { /* Not display none but 6.31 css secrets*/
+    position: absolute;
+    clip: rect(0,0,0,0);
 }
+
 
 .emojis {
   display: flex;
