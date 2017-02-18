@@ -4,11 +4,14 @@
 -----------------------------*/
 
 :root {
+  /* Colors */
   --main-bg-color: #dee2e6;
   --main-fr-color: #fff;
   --header-color: #2979FF;
 
+  /*Typography*/
   --main-font: 'Roboto', sans-serif;
+
   --main-font-color: #fff;
   --main-link-color: purple;
   --main-heading-color: #1565C0;
@@ -16,16 +19,26 @@
 
   --nav-dark: #3949AB;
 
+  /* Box Shadow */
   --box-shadow-1: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   --section-bg-color: #fff;
-
   --chat-bg-color: #2196F3;
   --chat-bg2-color: #009688;
-
   --button-color: #4263eb;
-
   --nav-bg-color: #4263eb;
+
+  /* Padding */
+  --padding-none: 0;
+  --padding-small: 0.5em;
+  --padding-medium: 1em;
+  --padding-big: 2em;
+
+  /* Margin */
+  --margin-none: 0;
+  --margin-small: 1em;
+  --margin-medium: 2em;
+  --margin-big: 3em;
 }
 
 /* Some resets
@@ -34,14 +47,13 @@ a {
   text-decoration: none;
 }
 
-ul,ol {
+ul {
   list-style-type: none;
-  padding: 0;
+  padding: var(--padding-none);
 }
 
 html, body {
-  margin: 0;
-  padding;
+  margin: var(--margin-none);
 }
 
 
@@ -50,14 +62,14 @@ html, body {
 
 html {
   background-color: var(--main-bg-color);
-  font-family: var(--main-font)
+  font-family: var(--main-font);
 }
 
 section {
   background-color: var(--main-fr-color);
   box-shadow: var(--box-shadow-1);
-  padding: 2em;
-  margin: 2em;
+  padding: var(--padding-big);
+  margin: var(--margin-medium);
 }
 
 h2 {
@@ -73,7 +85,7 @@ img {
 
 header {
   background-color: var(--header-color);
-  padding: 2em;
+  padding: var(--padding-big);
   color: var(--main-fr-color);
 }
 
@@ -83,7 +95,7 @@ header {
 form {
   display: flex;
   background-color: var(--main-bg-color);
-  padding: 2em;
+  padding: var(--padding-big);
 }
 
 label {
@@ -100,9 +112,7 @@ input {
 
 article {
   box-shadow: var(--box-shadow-1);
-  display: flex;
-  flex-direction: column;
-  margin: 2%;
+  padding: var(--padding-medium);
 }
 
 nav {
@@ -110,6 +120,7 @@ nav {
   flex-wrap: wrap;
   background-color: var(--nav-bg-color);
   color: var(--main-fr-color);
+
   padding: 0em 1em;
 }
 
@@ -154,7 +165,7 @@ input:focus {
 [data-status] {
   border-radius: 100%;
   padding: 0.2em;
-  margin: 1%;
+  margin: var(--margin-small);
 }
 
 [data-status="READ"]:before {
@@ -230,22 +241,15 @@ line-height: 4;
 }
 
 .media-item article {
+  display: flex;
   max-width: 30vw;
+  flex-wrap: wrap;
 }
 
-article img {
-  width: 100%;
+.media-item article img {
   order: -1;
-}
-
-article > h1 {
-  padding: 0em 1em;
-  order: 0;
-}
-
-article > p {
-  padding: 0em 1em;
-  order: 0;
+  object-fit: cover;
+  width: 100%;
 }
 
 /* 4. Navigation
@@ -258,11 +262,11 @@ nav ul {
   display: flex;
   width: 100%;
   background-color: #448AFF;
-  padding: 1em;
+  padding: var(--padding-medium);
 }
 
 nav li a{
-  margin-right: 3em;
+  margin-right: var(--margin-big);
   color: white;
   border-bottom: 0.10em solid white;
 }
@@ -272,7 +276,27 @@ nav ul li ul {
   display: none;
 }
 
-/* 5. Picture with subtitle
+/* 5. Picture with subtitle */
+figure {
+  width: min-content;
+  box-shadow: var(--box-shadow-1);
+  min-width: 30vw;
+  max-width: 40vw;
+  padding: var(--padding-big);
+  margin: var(--margin-none);
+}
+
+figure img {
+  height: 30vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.picture article {
+  box-shadow: none;
+}
+
+/* 6. Rating
 -----------------------*/
 .rating {
   display: flex;
@@ -294,12 +318,29 @@ fieldset [type="radio"] {
 
 .emojis {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 fieldset label {
-  line-height: 0;
+  line-height: 2;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   align-items: center;
+}
+
+/* 7. Step indicator
+----------------------------*/
+progress {
+  width: 100%;
+}
+
+progress[value] {
+  height: 20px;
+  appearance: none;
+}
+
+.step ol {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
 }
