@@ -58,33 +58,6 @@
   --margin-big: 3em;
 }
 
-@keyframes tada {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  10%, 20% {
-    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-  }
-
-  30%, 50%, 70%, 90% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-  }
-
-  40%, 60%, 80% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
 /* Reset
 -----------------------------*/
 a {
@@ -222,7 +195,6 @@ nav h1 {
 
 article {
   box-shadow: var(--box-shadow-1);
-  padding: var(--padding-medium);
   position: relative;
 }
 
@@ -249,8 +221,6 @@ input[type="radio"] { /* Not display none but 6.31 css secrets*/
     position: absolute;
     clip: rect(0,0,0,0);
 }
-
-
 
 /* Attributes
 -----------------------------*/
@@ -295,11 +265,12 @@ input[type="checkbox"]:focus + label::before { /* Focus state for tab */
 
 input[type="radio"] + label {
   opacity: 0.5;
-  transition: all 0.5s ease-in;
+  transition: all 250ms ease-in;
 }
 
 input[type="radio"]:checked + label {
   opacity: 1;
+  transition: all 250ms ease-in;
 }
 
 [data="you"] {
@@ -371,22 +342,36 @@ form textarea {
 
 /* 3. Media-item
 -----------------------------*/
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 article {
   display: flex;
   flex-wrap: wrap;
+  max-width: 60vw;
+  margin: var(--margin-medium);
 }
 
 img {
   object-fit: cover;
 }
 
-article div,article img {
-  flex-basis: 40%;
+.item article:first-child > img{
+  flex-basis: 50%;
+}
+
+article div, article img {
+  flex-basis: 30%;
   flex-grow: 1;
 }
 
-.media-item img {
-  padding: 1em 2em;
+article div {
+  flex-basis: 60%;
+  padding: var(--padding-medium);
 }
 
 /* 4. Navigation
