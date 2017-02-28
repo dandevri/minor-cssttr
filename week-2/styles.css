@@ -142,9 +142,7 @@ input {
   display: inline;
 }
 
-article {
-  box-shadow: var(--box-shadow-1);
-  padding: var(--padding-medium);
+article a {
   position: relative;
 }
 

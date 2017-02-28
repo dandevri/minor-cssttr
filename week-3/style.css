@@ -39,6 +39,7 @@
   /* Border Radius */
   --border-radius-chat1: 0em 1em 1em 1em;
   --border-radius-chat2: 2em 0em 2em 2em;
+  --border-radius-extrasmall: 0.25em;
   --border-radius-small: 1em;
 
   /* Width */
@@ -57,19 +58,51 @@
   --margin-big: 3em;
 }
 
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
 /* Reset
 -----------------------------*/
 a {
   text-decoration: none;
   display: block;
   width: 100%; /* 6.30 Extending the clickable area of anchor links */
+  color: var(--second-font-color);
 }
 
 ul, ol {
-  display: flex;
-  flex-direction: column;
   list-style-type: none;
   padding: var(--padding-none);
+  margin: var(--margin-none);
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
 }
 
 html, body {
@@ -83,6 +116,14 @@ img {
 input,textarea {
   font-size: var(--font-size-small);
   padding: var(--padding-small);
+  border: none;
+}
+
+svg {
+  width: 4vw;
+}
+
+fieldset {
   border: none;
 }
 
@@ -113,7 +154,6 @@ h2 {
   border-bottom: 0.05em solid var(--main-heading-color);
   color: var(--main-heading-color);
 }
-
 /* Tags
 -----------------------------*/
 form {
@@ -172,6 +212,46 @@ input:focus:invalid + .wrong {
   animation: fadeIn 1s;
 }
 
+nav {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+nav h1 {
+  color: var(--main-fr-color);
+}
+
+article {
+  box-shadow: var(--box-shadow-1);
+  padding: var(--padding-medium);
+  position: relative;
+}
+
+/* Media item fully clickable*/
+article a::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: '';
+}
+
+fieldset {
+  width: 50vw;
+  text-align: center;
+  border-radius: 0.5em;
+  float: left;
+  border: none;
+  box-shadow: var(--box-shadow-1);
+}
+
+input[type="radio"] { /* Not display none but 6.31 css secrets*/
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+
+
 /* Attributes
 -----------------------------*/
 [type="submit"] {
@@ -193,7 +273,7 @@ input[type="checkbox"] + label::before {
   width: var(--padding-medium);
   height: var(--padding-medium);
   margin-right: var(--padding-small);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-extrasmall);
   background: grey;
   text-indent: .15em;
   line-height: .65;
@@ -211,6 +291,15 @@ input[type="checkbox"] { /* Hide original checkbox */
 
 input[type="checkbox"]:focus + label::before { /* Focus state for tab */
     box-shadow: 0 0 .1em .1em #58a;
+}
+
+input[type="radio"] + label {
+  opacity: 0.5;
+  transition: all 0.5s ease-in;
+}
+
+input[type="radio"]:checked + label {
+  opacity: 1;
 }
 
 [data="you"] {
@@ -277,5 +366,124 @@ form textarea {
 .login {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+/* 3. Media-item
+-----------------------------*/
+article {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img {
+  object-fit: cover;
+}
+
+article div,article img {
+  flex-basis: 40%;
+  flex-grow: 1;
+}
+
+.media-item img {
+  padding: 1em 2em;
+}
+
+/* 4. Navigation
+-----------------------------*/
+nav h1 {
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+  margin: var(--margin-none);
+  padding: var(--padding-medium);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+  transition: 0.5s ease;
+  position: relative;
+}
+
+nav ul li:hover {
+  border-bottom: 3px solid #a3bded;
+}
+
+nav ul li a {
+  padding: 1em 0em;
+  display: block;
+  width: 100%;
+}
+
+nav ul ul {
+  display: flex;
+  flex-direction: column;
+  height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  box-shadow: var(--box-shadow-1);
+}
+
+[data="submenu"] li:not(:last-child) {
+  border-bottom: 1px solid lightgrey;
+}
+
+[data="submenu"]:hover ul {
+  background: var(--main-fr-color);
+  opacity: 1;
+  transition: all 0.5s;
+  height: 20vh;
+  position: absolute;
+  width: 100%;
+}
+
+/* 5. Picture with subtitle
+-----------------------------*/
+figure {
+  width: min-content; /* 7.36 Intrinsic sizing */
+  box-shadow: var(--box-shadow-1);
+  min-width: 30vw;
+  padding: var(--padding-big);
+  margin: var(--margin-none);
+}
+
+figure img {
+  height: 30vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+.picture-subtitle article {
+  box-shadow: none;
+}
+
+.picture-subtitle {
+  flex-direction: column;
+  box-shadow: none;
+}
+
+/* 6. Picture with subtitle
+-----------------------------*/
+.rating {
+  display: flex;
+  justify-content: center;
+}
+
+.emojis {
+  display: flex;
+  justify-content: space-around;
+}
+
+fieldset label {
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
