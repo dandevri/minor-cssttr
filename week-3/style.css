@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+
+:root {
+  /* Colors */
+  --main-bg-color: #dee2e6;
+  --main-fr-color: #fff;
+  --header-color: #2979FF;
+
+  /* Colors - Feedback */
+  --feedback-wrong: #F44336;
+  --feedback-correct: #4CAF50;
+
+  /*Typography - Font Size*/
+  --main-font: 'Roboto', sans-serif;
+  --font-size-extrasmall: 0.8em;
+  --font-size-small: 0.9em;
+  --font-size-normal: 1em;
+  --font-size-big: 1.2em;
+
+  /*Typography - Colors*/
+  --main-font-color: #fff;
+  --second-font-color: #78909C;
+  --main-link-color: purple;
+  --main-heading-color: #1565C0;
+  --main-p-color: black;
+
+  --nav-dark: #3949AB;
+
+  /* Box Shadow */
+  --box-shadow-1: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  /* Colors */
+  --section-bg-color: #fff;
+  --chat-bg1-color: #2196F3;
+  --chat-bg2-color: #009688;
+  --button-color: #4263eb;
+  --nav-bg-color: #4263eb;
+
+  /* Border Radius */
+  --border-radius-chat1: 0em 1em 1em 1em;
+  --border-radius-chat2: 2em 0em 2em 2em;
+  --border-radius-small: 1em;
+
+  /* Width */
+  --full-width: 100vw;
+
+  /* Padding */
+  --padding-none: 0;
+  --padding-small: 0.5em;
+  --padding-medium: 1em;
+  --padding-big: 2em;
+
+  /* Margin */
+  --margin-none: 0;
+  --margin-small: 1em;
+  --margin-medium: 2em;
+  --margin-big: 3em;
+}
+
+/* Reset
+-----------------------------*/
+a {
+  text-decoration: none;
+  display: block;
+  width: 100%; /* 6.30 Extending the clickable area of anchor links */
+}
+
+ul, ol {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: var(--padding-none);
+}
+
+html, body {
+  margin: var(--margin-none);
+}
+
+img {
+  max-width: var(--full-width);
+}
+
+input,textarea {
+  font-size: var(--font-size-small);
+  padding: var(--padding-small);
+  border: none;
+}
+
+/* Global Page Styling
+-----------------------------*/
+
+html {
+  background-color: var(--main-bg-color);
+  font-family: var(--main-font);
+}
+
+header {
+  background-color: var(--header-color);
+  padding: var(--padding-big);
+  color: var(--main-fr-color);
+}
+
+section {
+  background-color: var(--main-fr-color);
+  box-shadow: var(--box-shadow-1);
+  padding: var(--padding-big);
+  margin: var(--margin-medium);
+}
+
+h2 {
+  padding: 1em 0em;
+  margin: 0em 2em;
+  border-bottom: 0.05em solid var(--main-heading-color);
+  color: var(--main-heading-color);
+}
+
+/* Tags
+-----------------------------*/
+form {
+  display: flex;
+  box-shadow: var(--box-shadow-1);
+}
+
+label {
+  line-height: 3;
+}
+
+/* Form validaton */
+input, input:focus {
+  line-height: 2.5;
+  font-size: 1em;
+  padding: 0.25em;
+  border: none;
+  border-bottom: 2px solid lightgrey;
+  transition: border-bottom 0.2s ease-in;
+  outline: none;
+}
+
+/*Change bottom-border color*/
+input:valid {
+  border-bottom: 2px solid var(--feedback-correct);
+  color: var(--feedback-correct);
+}
+
+input:focus:invalid {
+  border-bottom: 2px solid var(--feedback-wrong);
+  color: var(--feedback-wrong);
+}
+
+/*Show when correct*/
+input:focus:valid + .correct {
+  display: block;
+  font-size: 0.9em;
+  color: var(--feedback-correct);
+  animation: fadeIn 1s;
+}
+
+input:valid + .correct,input:invalid + .correct {
+  display: none;
+  color: var(--feedback-wrong);
+}
+
+/*Show when wrong*/
+input + .wrong {
+  display: none;
+}
+
+input:focus:invalid + .wrong {
+  display: block;
+  color: red;
+  font-size: 0.9em;
+  animation: fadeIn 1s;
+}
+
+/* Attributes
+-----------------------------*/
+[type="submit"] {
+  background-color: var(--button-color);
+  border: none;
+  padding: var(--padding-medium);
+  color: var(--main-fr-color);
+  min-width: 10vw;
+  font-weight: 900;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+/* Custom Checkbox */
+input[type="checkbox"] + label::before {
+  content: '\a0'; /* non-break space */
+  display: inline-block;
+  vertical-align: .2em;
+  width: var(--padding-medium);
+  height: var(--padding-medium);
+  margin-right: var(--padding-small);
+  border-radius: var(--border-radius-small);
+  background: grey;
+  text-indent: .15em;
+  line-height: .65;
+}
+
+input[type="checkbox"]:checked + label::before { /* Checked state */
+    content: '\2713';
+    background: var(--feedback-correct);
+}
+
+input[type="checkbox"] { /* Hide original checkbox */
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"]:focus + label::before { /* Focus state for tab */
+    box-shadow: 0 0 .1em .1em #58a;
+}
+
+[data="you"] {
+  align-self: flex-end;
+}
+
+[data="you"] > p {
+  background-color: var(--chat-bg2-color);
+  border-radius: var(--border-radius-chat2);
+}
+
+[data="user"] > p {
+  background-color: var(--chat-bg1-color);
+  border-radius: var(--border-radius-chat1);
+}
+
+[data-status="READ"]:before {
+  content: "✓✓ ";
+}
+
+[data-status="DELIVERED"]:before {
+  content: "✓ ";
+}
+
+/* 1. Chat
+-----------------------------*/
+form textarea {
+  display: flex;
+  flex: 1;
+  align-self: center;
+}
+
+.chat li > p {
+  color: var(--main-fr-color);
+  padding: var(--padding-medium);
+  min-width: 25vw;
+  max-width: 30vw;
+}
+
+.chat footer {
+  font-size: var(--font-size-extrasmall);
+  color: var(--second-font-color);
+}
+
+/* 2. Login Form
+-----------------------------*/
+.login form {
+  padding: var(--padding-big);
+  padding-bottom: calc(2 * var(--padding-big));
+  display: flex;
+  flex-direction: column;
+  min-width: 30vw;
+  max-width: 30vw;
+  position: relative;
+}
+
+.login button {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
