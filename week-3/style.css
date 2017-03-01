@@ -57,6 +57,10 @@ ul {
   margin: 0;
 }
 
+dialog {
+  border: none;
+}
+
 hr {
   width: 20%;
   margin: 0;
@@ -126,6 +130,17 @@ form {
 
 label {
   line-height: 3;
+}
+
+button{
+  background-color: var(--accent-color);
+  border: none;
+  padding: var(--scale-normal);
+  color: var(--main-font-color);
+  min-width: 10vw;
+  font-weight: 900;
+  font-size: var(--scale-normal);
+  cursor: pointer;
 }
 
 
@@ -224,6 +239,12 @@ button[type="submit"] {
   font-weight: 900;
   font-size: var(--scale-normal);
   cursor: pointer;
+}
+
+button[name="close"] {
+  background: none;
+  width: 100%;
+  text-align: right;
 }
 
 /* Custom Checkbox */
@@ -329,7 +350,7 @@ form textarea {
   position: relative;
 }
 
-.login button {
+.login form button {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -340,6 +361,15 @@ form textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Clickable dialog box */
+#modal {
+  position: fixed;
+}
+
+dialog::backdrop {
+	background: rgba(33, 150, 243, 0.6);
 }
 
 /* ==========================================================================

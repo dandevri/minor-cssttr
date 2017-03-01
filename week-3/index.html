@@ -69,26 +69,29 @@
 
 <h2>2. Login screen</h2>
 <section class="login">
-  <form action="/" method="post">
+  <button onclick="document.querySelector('.modal').showModal()">Click me</button>
+    <dialog class="modal">
+      <button name="close" onclick="this.parentNode.close()">❌</button>
+      <form action="/" method="post">
 
-      <label for="field-email">Email</label>
-      <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
-      <p class="correct">✓ Your e-mail is correct!</p>
+          <label for="field-email">Email</label>
+          <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+          <p class="correct">✓ Your e-mail is correct!</p>
 
-      <label for="field-password">Password</label>
-      <input type="password" id="field-password" name="field-password" required>
-      <p class="wrong">✕ Your password isn't good enough.</p>
+          <label for="field-password">Password</label>
+          <input type="password" id="field-password" name="field-password" required>
+          <p class="wrong">✕ Your password isn't good enough.</p>
 
-      <div class="password">
-        <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
-        <label for="field-stay-logged-in">Stay logged in</label>
-      </div>
+          <div class="password">
+            <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+            <label for="field-stay-logged-in">Stay logged in</label>
+          </div>
 
-      <a href="/">Forgot password</a>
+          <a href="/">Forgot password</a>
 
-      <button type="submit">Login</button>
-
-  </form>
+          <button type="submit">Login</button>
+    </form>
+  </dialog>
 </section>
 
 <h2>3. Media item</h3>
