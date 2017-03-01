@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
 
+@font-face { /* CSS secrets 5.25 */
+  font-family: Checkmark;
+  src: local('Baskerville-BoldItalic');
+  unicode-range: U+2713;
+}
+
 :root {
   /* Colors */
   --bg-color: #dee2e6;
@@ -43,14 +49,22 @@ a {
   color: var(--secondary-color);
 }
 
-ul, ol {
+ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
+hr {
+  width: 20%;
+  margin: 0;
+  height: .15em;
+  background-color: var(--accent-color);
+}
+
 html, body {
   margin: 0;
+  box-sizing: border-box;
 }
 
 img {
@@ -64,7 +78,7 @@ input,textarea {
 }
 
 svg {
-  width: 30%;
+  width: 20%;
 }
 
 fieldset {
@@ -194,7 +208,7 @@ input[type="radio"] { /* Not display none but 6.31 css secrets*/
 
 /* Attributes
 -----------------------------*/
-[type="submit"] {
+button[type="submit"] {
   background-color: var(--accent-color);
   border: none;
   padding: var(--scale-normal);
@@ -212,7 +226,7 @@ input[type="checkbox"] + label::before {
   vertical-align: .2em;
   width: var(--scale-normal);
   height: var(--scale-normal);
-  margin-right: 2em;
+  margin-right: 1em;
   border-radius: .25em;
   background: grey;
   text-indent: .15em;
@@ -271,6 +285,9 @@ input[type="radio"]:checked + label {
 .chat ol {
   display: flex;
   flex-direction: column;
+  list-style-type: none; /* Reset list style for chat only */
+  padding: 0;
+  margin: 0;
 }
 
 form textarea {
@@ -280,7 +297,7 @@ form textarea {
 }
 
 .chat li > p {
-  color: var(--main-fr-color);
+  color: var(--main-font-color);
   padding: var(--scale-normal);
   min-width: 25vw;
   max-width: 30vw;
@@ -328,7 +345,7 @@ form textarea {
 article {
   display: flex;
   flex-wrap: wrap;
-  max-width: 50vw;
+  max-width: 30vw;
   margin: calc(2 * var(--scale-normal));
 }
 
@@ -373,6 +390,7 @@ nav ul li {
 
 nav ul li:hover {
   border-bottom: 3px solid #a3bded;
+  background-color: #ECEFF1;
 }
 
 nav ul li a {
@@ -413,10 +431,13 @@ figure {
 }
 
 figure img {
-  max-width: 20em;
+  max-width: 15em;
   margin-right: 2em;
 }
 
+.picture-subtitle {
+  max-width: 50em;
+}
 /* 6. Rating
 -----------------------------*/
 .rating {
@@ -441,4 +462,61 @@ fieldset label {
 .step ol {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  counter-reset: dot;
+  padding: calc(2 * var(--scale-normal));
 }
+
+nav ol li {
+  padding: 1em 2em;
+}
+
+.step li {
+  color: var(--main-font-color);
+	position: relative;
+	background: var(--accent-color);
+	border: .25em solid var(--secondary-color);
+  border-radius: var(--scale-normal);
+  counter-increment: dot;
+  display: flex;
+}
+
+.step li a {
+  color: inherit;
+}
+
+.step li:before {
+  margin-right: 10px;
+  content: counter(dot);
+  background: var(--primary-color);
+  border-radius: 100%;
+  color: var(--accent-color);
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Loading spinner without sprite (8.43)
+-----------------------------*/
+.preloader { /* 2.7 Random background, what's the use case for this? */
+  background: hsl(0, 100%, 100%);
+  background-image:
+  	linear-gradient(90deg, #fff 11px, transparent 0),
+  	linear-gradient(90deg, #DEE2E6 23px, transparent 0),
+  	linear-gradient(90deg, #fff 23px, transparent 0);
+  background-size: 20px 100%, 50px 100%, 30px 100%;
+}
+.spinner {
+  background-color: var(--accent-color);
+  cursor: progress; /* 6.29 cursor */
+  height: 4em;
+  width: 4em;
+  border-radius: 100%;
+  animation: spinner 2s infinite ease-in-out;
+}
+
+@keyframes spinner  {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.5); } }
