@@ -530,14 +530,18 @@ nav ol li {
   color: var(--main-font-color);
 	position: relative;
 	background: var(--accent-color);
-	border: .25em solid var(--secondary-color);
-  border-radius: var(--scale-normal);
+  border-radius: calc(var(--scale-normal) / 2);
   counter-increment: dot;
   display: flex;
 }
 
 .step li a {
   color: inherit;
+  background: inherit;
+}
+
+.step a:before {
+  content: "✓"
 }
 
 .step li:before {
@@ -546,7 +550,7 @@ nav ol li {
   background: var(--primary-color);
   border-radius: 100%;
   color: var(--accent-color);
-  width: 1.2em;
+  width: 1.25em;
   text-align: center;
   display: inline-block;
 }
