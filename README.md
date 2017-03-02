@@ -16,10 +16,10 @@ This is a living styleguide for the class "CSS to the Rescue". Part of the Minor
 
 **Personal learning goals**
 * Work more seamlessy with Flexbox
-* Using the right relative unites
+* Using the right relative units
 * Play around with CSS variables
 * Know some more advanced selectors
-* Use new :pseude selectors
+* Use new :pseudo selectors
 * Use a respected CSS structure
 
 **Stylesheet Order**

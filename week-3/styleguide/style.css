@@ -101,7 +101,7 @@ html {
 }
 
 header {
-  background-color: blue;
+  background-color: #009688;
   padding: calc(1.5 * var(--scale-normal));
   color: var(--primary-color);
 }
@@ -540,6 +540,13 @@ nav ol li {
   border-radius: calc(var(--scale-normal) / 2);
   counter-increment: dot;
   display: flex;
+  box-shadow: var(--box-shadow-1);
+  transition: all 250ms ease-in;
+}
+
+.step li:hover {
+  box-shadow: var(--box-shadow-2);
+  transition: all 250ms ease-in;
 }
 
 .step li a {
