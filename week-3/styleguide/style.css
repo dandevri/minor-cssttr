@@ -321,6 +321,10 @@ input[type="radio"]:checked + label {
 /* ==========================================================================
    1. Chat
    ========================================================================== */
+.chat {
+  max-width: 50em;
+}
+
 .chat ol {
   display: flex;
   flex-direction: column;
@@ -338,7 +342,6 @@ form textarea {
 .chat li > p {
   color: var(--main-font-color);
   padding: var(--scale-normal);
-  min-width: 25vw;
   max-width: 30vw;
 }
 
@@ -370,6 +373,10 @@ button[name="close"] {
   position: static;
   color: var(--feedback-wrong);
   box-shadow: none;
+}
+
+form a {
+  line-height: 5;
 }
 
 /* Clickable dialog box */
