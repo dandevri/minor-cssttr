@@ -575,6 +575,10 @@ nav ol li {
    display: block;
  }
 
+ article {
+   max-width: none;
+ }
+
  hr {
    width: 100%;
    margin: 1em 0em;
