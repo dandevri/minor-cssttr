@@ -2,6 +2,18 @@
 
 Code &amp; documentation for the Minor Class: CSS to the Rescue 🎉
 
+**Styleguide**
+
+[Code](https://github.com/dandevri/minor-cssttr/tree/master/week-3/styleguide)
+
+[Live version](https://dandevri.github.io/minor-cssttr/week-3/styleguide/)
+
+**Website**
+
+[Code](https://github.com/dandevri/minor-cssttr/tree/master/week-3/website)
+
+[Live version](https://dandevri.github.io/minor-cssttr/week-3/website/)
+
 ## Final Assignment
 This is a living styleguide for the class "CSS to the Rescue". Part of the Minor Web Development at the University of Applied Sciences Amsterdam.
 
