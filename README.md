@@ -2,16 +2,13 @@
 
 Code &amp; documentation for the Minor Class: CSS to the Rescue 🎉
 
-**Styleguide**
-
-[Code](https://github.com/dandevri/minor-cssttr/tree/master/week-3/styleguide)
-
+**Styleguide**: [Code](https://github.com/dandevri/minor-cssttr/tree/master/week-3/styleguide)
+|
 [Live version](https://dandevri.github.io/minor-cssttr/week-3/styleguide/)
 
 **Website**
-
 [Code](https://github.com/dandevri/minor-cssttr/tree/master/week-3/website)
-
+|
 [Live version](https://dandevri.github.io/minor-cssttr/week-3/website/)
 
 ## Final Assignment
